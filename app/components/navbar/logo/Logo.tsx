@@ -1,14 +1,11 @@
 'use client';
 
-import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Image from "next/image"
 
-const Logo = () => {
-  const router = useRouter()
-
+const Logo: React.FC = (): JSX.Element => {
   return (
     <Image 
-      alt="Logo"
+      alt="Airbnb logo"
       className="hidden md:block cursor-pointer"
       height="100"
       width="100"
@@ -17,4 +14,4 @@ const Logo = () => {
   )
 }
 
-export default Logo;
+export default Logo

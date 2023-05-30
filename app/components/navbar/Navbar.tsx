@@ -1,9 +1,11 @@
-import Container from "../Container";
-import Logo from "./Logo";
-import Search from "./Search";
-import UserMenu from "./UserMenu";
+'use client';
 
-const NavBar = () => {
+import Container from "../container/Container"
+import Logo from "./logo/Logo"
+import Search from "./search/Search"
+import UserMenu from "./usermenu/UserMenu"
+
+const NavBar: React.FC = (): JSX.Element => {
   return (
     <div className="fixed w-full bg-white z-10 shadow-sm">
       <div className="py-4 border-b-[1px]">
@@ -19,4 +21,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar;
+export default NavBar

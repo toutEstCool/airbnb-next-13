@@ -9,9 +9,7 @@ const UserMenu: React.FC = (): JSX.Element => {
   const [isOpen, setIsOpen] = React.useState(false)
 
   const toggleOpen = React.useCallback(() => {
-    setIsOpen(function(m) {
-      return m = !m
-    })
+    setIsOpen(value => !value)
   }, [])
   
   return (
@@ -31,7 +29,8 @@ const UserMenu: React.FC = (): JSX.Element => {
       isOpen && (
         <div className='absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm'>
           <div className='flex flex-col cursor-pointer'>
-            <MenuItem />
+            <MenuItem label='Login' onClick={() => {}}/>
+            <MenuItem label='Sign Up' onClick={() => {}}/>
           </div>
         </div>
       )

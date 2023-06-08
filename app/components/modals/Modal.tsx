@@ -76,7 +76,7 @@ const Modal: React.FC<IPropsModal> = ({
               <div className='flex flex-row items-center gap-4 w-full'>
                 {
                   secondaryAction && secondaryActionLabel && (
-                    <Button disabled={disabled} label={secondaryActionLabel} onClick={handleSecondaryAction}/>
+                    <Button outline disabled={disabled} label={secondaryActionLabel} onClick={handleSecondaryAction}/>
                   )
                 }
                 <Button disabled={disabled} label={actionLabel} onClick={handleSubmit}/>

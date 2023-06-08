@@ -11,7 +11,6 @@ const Modal: React.FC<IPropsModal> = ({
   onSubmit,
   title,
   body,
-  footer,
   actionLabel,
   disabled,
   secondaryAction,

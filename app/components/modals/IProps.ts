@@ -8,5 +8,5 @@ export interface IPropsModal {
   actionLabel?: string
   disabled: boolean
   secondaryAction?: () => void
-  secondaryActionLabel: string 
+  secondaryActionLabel?: string 
 }

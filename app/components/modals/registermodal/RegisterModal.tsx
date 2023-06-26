@@ -10,6 +10,8 @@ import axios from 'axios';
 import Modal from '../Modal';
 import Heading from '../../heading/Heading';
 import Input from '../../inputs/Input';
+import { toast } from 'react-hot-toast';
+import Button from '../../button/Button';
 
 const RegisterModal = (): JSX.Element => {
   const registerModal = useRegisterModal()
@@ -33,7 +35,7 @@ const RegisterModal = (): JSX.Element => {
         registerModal.onClose()
       })
       .catch((error) => {
-        console.log(error);
+        toast.error('Something Went Wrong 👾')
       })
       .finally(() => {
         setIsLoading(false)
@@ -73,16 +75,54 @@ const RegisterModal = (): JSX.Element => {
       />
     </div>
   )
+
+  const footerContent = (
+    <div className='flex flex-col gap-4 mt-5'>
+      <hr />
+      <Button 
+        outline
+        label='Continue with Google'
+        icon={FcGoogle}
+        onClick={() => {}}
+      />
+      <Button 
+        outline
+        label='Continue with GitHub'
+        icon={AiFillGithub}
+        onClick={() => {}}
+      />
+      <div 
+        className="
+          text-neutral-500 
+          text-center 
+          mt-4 
+          font-light
+        "
+      >
+        <p>Already have an account?
+          <span 
+            onClick={registerModal.onClose} 
+            className="
+              text-neutral-800
+              cursor-pointer 
+              hover:underline
+            "
+            > Log in</span>
+        </p>
+      </div>
+    </div>
+  )
   
   return (
     <Modal 
       disabled={isLoading}
       isOpen={registerModal.isOpen}
-      title='Register'
-      actionLabel='Continue'
+      title="Register"
+      actionLabel="Continue"
       onClose={registerModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
       body={bodyContent}
+      footer={footerContent}
     />
   )
 }

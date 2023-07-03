@@ -5,7 +5,6 @@ import { AiFillGithub } from 'react-icons/ai'
 import { FcGoogle } from 'react-icons/fc'
 import { useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import axios from 'axios';
 import Modal from '../Modal';
 import Heading from '../../heading/Heading';
 import Input from '../../inputs/Input';
@@ -14,6 +13,7 @@ import Button from '../../button/Button';
 import useLoginModal from '@/app/hooks/useLoginModal';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import { useRouter } from 'next/navigation';
+
 
 const LoginModal = (): JSX.Element => {
   const router = useRouter()
@@ -84,13 +84,13 @@ const LoginModal = (): JSX.Element => {
         outline
         label='Continue with Google'
         icon={FcGoogle}
-        onClick={() => {}}
+        onClick={() => signIn('google')}
       />
       <Button 
         outline
         label='Continue with GitHub'
         icon={AiFillGithub}
-        onClick={() => {}}
+        onClick={() => signIn('github')}
       />
       <div 
         className="

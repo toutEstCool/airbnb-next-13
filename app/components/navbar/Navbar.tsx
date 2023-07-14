@@ -1,6 +1,7 @@
 'use client';
 
 import Container from "../container/Container"
+import Categories from "./categories/Categories";
 import Logo from "./logo/Logo"
 import Search from "./search/Search"
 import UserMenu from "./usermenu/UserMenu"
@@ -22,6 +23,7 @@ const NavBar: React.FC<IPropsNavBar> = ({ currentUser }): JSX.Element => {
           </div>
         </Container>
       </div>
+      <Categories />
     </div>
   )
 }
